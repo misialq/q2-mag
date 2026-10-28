@@ -490,7 +490,7 @@ plugin.methods.register_function(
 plugin.methods.register_function(
     function=q2_mag.utils.get_feature_lengths,
     inputs={
-        "features": FeatureData[MAG | Sequence] | SampleData[MAGs | Contigs],
+        "features": FeatureData[MAG | Sequence] | SampleData[MAGs | Contigs % Properties("pooled", "coassembled")],
     },
     parameters={},
     outputs=[("lengths", FeatureData[SequenceCharacteristics % Properties("length")])],
